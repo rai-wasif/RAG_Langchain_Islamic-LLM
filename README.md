@@ -258,13 +258,13 @@ Open: `http://localhost:8501`
 ## Output Screenshots (Placeholders)
 
 <p align="center">
-	<img src="" alt="Screenshot 1 - Home / Ask Screen" width="31%" />
-	<img src="" alt="Screenshot 2 - English + Urdu Answer" width="31%" />
-	<img src="" alt="Screenshot 3 - Retrieved Sources Panel" width="31%" />
+	<img src="1.png" alt="Screenshot 1 - Home / Ask Screen" width="31%" />
+	<img src="2.png" alt="Screenshot 2 - English + Urdu Answer" width="31%" />
+	<img src="3.png" alt="Screenshot 3 - Retrieved Sources Panel" width="31%" />
 </p>
 
 <p align="center">
-	<sub>Reserved space for 3 output screenshots. Add image paths when ready.</sub>
+	<sub>Project output screenshots.</sub>
 </p>
 
 ## Security and Operational Notes
