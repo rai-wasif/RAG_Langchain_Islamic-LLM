@@ -15,6 +15,42 @@ Core design principles:
 
 ## What Is Implemented
 
+## LangChain Concepts Implemented
+
+This project uses LangChain as the orchestration layer for the full RAG lifecycle, not only prompt calling.
+
+### Core LangChain primitives used
+
+- `Document` objects for normalized Quran/Hadith records with citation metadata
+- `RecursiveCharacterTextSplitter` for chunking mixed short/long Islamic texts
+- Message-based invocation (`HumanMessage`) for structured LLM interaction
+
+### RAG flow implemented with LangChain
+
+1. `CSV -> Document`  
+Each dataset row is converted into a LangChain `Document` with strict citation metadata.
+
+2. `Document -> Chunks`  
+`RecursiveCharacterTextSplitter` creates retrieval-friendly segments while preserving context.
+
+3. `Chunks -> Embeddings`  
+Chunk text is vectorized and persisted to Chroma.
+
+4. `Query -> Retrieval`  
+The user query is embedded and matched in vector space, with optional source filtering.
+
+5. `Retrieved Context -> Prompt`  
+Retrieved chunks are formatted into numbered source blocks for grounded answer generation.
+
+6. `Prompt -> LLM -> Rendered Answer`  
+Model output is rendered in English and Urdu with source markers.
+
+### Why LangChain matters in this repository
+
+- Modular pipeline design from ingestion to answer rendering
+- Clear extension path for retrievers, rerankers, and new corpora
+- Better traceability and maintainability for a citation-first RAG system
+
 ### 1) Data and ingestion strategy
 
 Primary files used by the pipeline:
@@ -200,6 +236,18 @@ Open: `http://localhost:8501`
 - What does Quran say about forgiveness?
 - What did the Prophet say about honesty?
 - نماز کی فضیلت کیا ہے؟
+
+## Output Screenshots (Placeholders)
+
+<p align="center">
+	<img src="" alt="Screenshot 1 - Home / Ask Screen" width="31%" />
+	<img src="" alt="Screenshot 2 - English + Urdu Answer" width="31%" />
+	<img src="" alt="Screenshot 3 - Retrieved Sources Panel" width="31%" />
+</p>
+
+<p align="center">
+	<sub>Reserved space for 3 output screenshots. Add image paths when ready.</sub>
+</p>
 
 ## Security and Operational Notes
 
