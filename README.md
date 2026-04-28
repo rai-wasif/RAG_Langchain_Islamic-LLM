@@ -51,6 +51,34 @@ Model output is rendered in English and Urdu with source markers.
 - Clear extension path for retrievers, rerankers, and new corpora
 - Better traceability and maintainability for a citation-first RAG system
 
+## Architecture Diagram
+
+### RAG Flow (Conceptual)
+
+```mermaid
+flowchart LR
+		A[Quran CSV + Hadith CSV] --> B[LangChain Document Creation]
+		B --> C[RecursiveCharacterTextSplitter]
+		C --> D[MiniLM Embeddings]
+		D --> E[(Chroma Vector DB)]
+		Q[User Question] --> QE[Query Embedding + Expansion]
+		QE --> E
+		E --> R[Top-k Retrieved Chunks]
+		R --> P[Strict Grounded Prompt]
+		P --> L[LLM: Groq or Gemini]
+		L --> O[English + Urdu Answer with Citations]
+```
+
+### Architecture Image Placeholder (Add Later)
+
+<p align="center">
+	<img src="" alt="IlmGPT RAG Architecture Diagram" width="82%" />
+</p>
+
+<p align="center">
+	<sub>Reserved for architecture image. Suggested path: screenshots/architecture-rag-flow.png</sub>
+</p>
+
 ### 1) Data and ingestion strategy
 
 Primary files used by the pipeline:
