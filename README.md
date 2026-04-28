@@ -69,14 +69,14 @@ flowchart LR
 		L --> O[English + Urdu Answer with Citations]
 ```
 
-### Architecture Image Placeholder (Add Later)
+### Optional Architecture Image (Add Later)
 
 <p align="center">
 	<img src="" alt="IlmGPT RAG Architecture Diagram" width="82%" />
 </p>
 
 <p align="center">
-	<sub>Reserved for architecture image. Suggested path: screenshots/architecture-rag-flow.png</sub>
+	<sub>Optional: the Mermaid diagram above is already your architecture. Add an image only if you want a portfolio-style visual. Suggested path: screenshots/architecture-rag-flow.png</sub>
 </p>
 
 ### 1) Data and ingestion strategy
